@@ -1,0 +1,11 @@
+<h1>Articulos</h1>
+
+<% @articles.each do |article|%>
+	<h1><%=link_to article.title, article%></h1>
+	<div>
+	<%= Sanitize.fragment(article.body, Sanitize::Config::RELAXED).html_safe %> - <%= link_to "Eliminar", article, method: :delete, class:"red" %> - 
+	<% if article.may_publish? %>
+		<%= link_to "Publicar", "/articles/#{article.id}/publish", method: :put, class:"blue" %>
+	<% end %>
+	</div>
+<% end %>
