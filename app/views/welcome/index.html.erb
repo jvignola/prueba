@@ -9,3 +9,14 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque corporis maiores
 
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita consectetur tempora cupiditate quia velit maxime, esse corrupti quis qui vel facilis voluptatum officia minus, quam dignissimos, sunt voluptates alias dicta!
+
+git branch -a (ve incluso las branches ocultas)
+git fetch origin (toma los cambios que haya en el repo remoto y los guarda en la rama oculta origin/master)
+
+git merge origin/master (mezcar a mi master lo que me viene del repo remoto con fetch)
+
+Si no hay conflictos, se mezcla automáticamente y todo bien, sino hay que hacer manualmente el merge, y luego:
+
+git add -A (o el nombre del/los archivo/s mergeado/s manualmente)
+git commit -m "mensaje"
+y git push origin master
